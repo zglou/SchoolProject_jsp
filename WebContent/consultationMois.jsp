@@ -9,7 +9,7 @@
 		
 
 		<script>
-			corps.innerHTML+='<p>Mois recherché : <input name="dateRechercheMois" type="date"  /><input type="button" value="Rechercher" name="valideRecherche" /><br/>';
+			corps.innerHTML+='<p>Mois recherché : <input name="dateRechercheMois" type="date"  /><input type="button" value="Rechercher" name="valideRecherche" onclick=";"/><br/>';
 			//out.print(); recup du bean et affichage des datas
 			// faire une fct qu'on appel à chaque fois que le btn est appuyer (js)
 			corps.innerHTML +="<br/>";

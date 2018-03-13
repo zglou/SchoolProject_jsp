@@ -8,66 +8,29 @@
 <script >
     var corps = document.getElementById('corps');
     corps.innerHTML = "";
+	corps.innerHTML +="<table>";
+	
+	corps.innerHTML +="<tr>";
+	
+	corps.innerHTML += "<th>Date</th>";
+	corps.innerHTML += "<th>Lieu</th>";
+	corps.innerHTML += "<th>Précipitation</th>";
+	corps.innerHTML += "<th>Type de précipitation</th>";
+	corps.innerHTML += "<th>Température</th>";
+	corps.innerHTML += "<th>Ensoleillement</th>";
+	corps.innerHTML += "<th>Direction du vent</th>";
+	corps.innerHTML += "<th>Vitesse du vent</th>";
+	corps.innerHTML += "<th>Photos</th>";
+	corps.innerHTML +="</tr>";
+
+	corps.innerHTML +="</table>";
+
+
 
 </script>
 	
 
-	<%
-	String x = request.getParameter("valider");
-	%>
-	<br>
-	 <%
-	 if(x!=null )
-	{
-		boolean send = true;
-		String dateM = request.getParameter("dateMeteo");
-		String lieuM = request.getParameter("lieuMeteo");
-		String precipitationM = request.getParameter("precipitationMeteo");
-		String typePrecipitationM = request.getParameter("typePrécipitationMeteo");
-		String temperatureM = request.getParameter("temperatureMeteo");
-		String ensoleilementM = request.getParameter("ensoleilementMeteo");
-		String dirVentM = request.getParameter("directionVentMeteo");
-		String vitVentM = request.getParameter("VitesseVentMeteo");
-		String ajoutPhotoM = request.getParameter("ajoutPhoto");
 	
-	    //try something
-		
-	 
-	    out.println(dateM);
-	    out.print("<br>");  
-	    if(lieuM.matches("^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$")){
-		  
-			out.println(lieuM);
-			out.print("<br>");
-	    }else{
-			send = false;
-	    }
-	    out.print(precipitationM);
-	    out.print("<br>");  
-	    out.print(typePrecipitationM);
-	    out.print("<br>");  
-	    out.print(temperatureM);
-	    out.print("<br>");  
-	    out.print(ensoleilementM);
-	    out.print("<br>");  
-	    if(dirVentM.matches("^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$")){
-		  
-			out.println(dirVentM);
-			out.print("<br>");
-	  	}else{
-		 	send=false;
-	  	}
-	  	out.print("<br>");  
-	  	out.print(vitVentM);
-	 	out.print("<br>");  
-	  	out.print(ajoutPhotoM);
-	
-	  	out.print("<br>");  
-	 
-	  
-	}
-	 
-	%>
 
 
 

@@ -12,7 +12,7 @@
 		
 
 		<script>
-			corps.innerHTML+='<p>Jour recherché : <input name="dateRechercheJour" type="date"  /><input type="button" value="Rechercher" name="valideRecherche" /><br/>';
+			corps.innerHTML+='<p>Jour recherché : <input name="dateRechercheJour" type="date"  /><input type="button" value="Rechercher" name="valideRecherche" onclick=";"/><br/>';
 			//out.print(); recup du bean et affichage des datas
 			// faire une fct qu'on appel à chaque fois que le btn est appuyer (js)
 			corps.innerHTML +="<br/>";
@@ -22,9 +22,6 @@
 			corps.innerHTML +="<br/>";
 			corps.innerHTML +="<br/>";
 			corps.innerHTML +="lieu : hgiuhgiuheihgb<br/><br/>Précipitation : 52 ml/cm²<br/>....";
-			
-			
-			
-		
+					
 		</script>
 </body>
