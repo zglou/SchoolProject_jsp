@@ -9,4 +9,4 @@
 	corps.innerHTML+= '<input name="dateRechercheMois" type="date"  />';
 	corps.innerHTML+= '<input name="lieu" type="txt" placeholder="Lieu" />';
 	corps.innerHTML+= '<input type="button" value="Rechercher" name="valideRecherche" /><br/>';
-</script>kk
+</script>
