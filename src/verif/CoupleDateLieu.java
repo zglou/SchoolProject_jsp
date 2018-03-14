@@ -43,7 +43,7 @@ public class CoupleDateLieu {
 			 this.date = LocalDate.parse(this.dateRecup, formatter);
 		}
 
-		if(!this.lieu.matches("/^[a-zA-Z]+$/")) {
+		if(!this.lieu.matches("(^[a-zA-Z]+$)")) {
 			return -2;
 		}
 		

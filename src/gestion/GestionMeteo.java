@@ -1,5 +1,6 @@
 package gestion;
 
+import java.io.InputStream;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -18,7 +19,8 @@ public class GestionMeteo {
 
 	public boolean initCo() {
 		try {
-			if (manager.gestion.initCo()) {
+			System.out.println(manager.gestion);
+			if (manager.gestion.initCo()) {	
 				isConnected = true;
 				return true;
 			}
@@ -65,12 +67,12 @@ public class GestionMeteo {
 		return false;
 	}
 
-	public ArrayList<Meteo> getMeteoByDay(int y, int m, int d) {
+	public ArrayList<Meteo> getMeteoByDay(int y, int m, int d, String lieu) {
 
 		ArrayList<Meteo> tabMeteo = new ArrayList<>();
 
 		try {
-			tabMeteo = manager.gestion.meteoByDay(y, m, d);
+			tabMeteo = manager.gestion.meteoByDay(y, m, d, lieu);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -78,17 +80,27 @@ public class GestionMeteo {
 		return tabMeteo;
 	}
 
-	public ArrayList<Meteo> getMeteoByMonth(int y, int m) {
+	public ArrayList<Meteo> getMeteoByMonth(int y, int m, String lieu) {
 		
 		ArrayList<Meteo> tabMeteo = new ArrayList<>();
 
 		try {
-			tabMeteo = manager.gestion.meteoByMonth(y, m);
+			tabMeteo = manager.gestion.meteoByMonth(y, m, lieu);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 
 		return tabMeteo;
+	}
+	
+	public InputStream getPhoto(int id) {
+		try {
+			return manager.gestion.getPhoto(id);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 }
