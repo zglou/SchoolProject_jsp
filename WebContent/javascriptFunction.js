@@ -85,7 +85,7 @@ function consultationParJour(jour){
 function ajouterDonnee(date, lieu, preci, typePreci, temp, enso, dirVent, VitVent, photo){
 	//using rmi to add a row to the database
 	if(date == null || date =="" || lieu == null || lieu =="" ||preci == null || preci =="" ||typePreci == null || typePreci =="" ||temp == null || temp =="" ||enso == null || enso =="" ||dirVent == null || dirVent =="" ||VitVent == null || VitVent =="" ){
-		alert("Un des champs n'est pas correctement rempli..");
+		alert("Un des champs n'est pas correctement rempli.");
 		return;
 	}else{
 		//retrieve the table of bean and populate a html table
