@@ -9,17 +9,9 @@
 		
 
 		<script>
-			corps.innerHTML+='<p>Mois recherché : <input name="dateRechercheMois" type="date"  /><input type="button" value="Rechercher" name="valideRecherche" onclick=";"/><br/>';
+			corps.innerHTML+='<p>Mois recherché : <input id="dateRechercheMois" type="date"  />';
+			corps.innerHTML += '<input type="button" value="Rechercher" id="valideRecherche" onclick="consultationParMois(document.getElementById(\'dateRechercheMois\').value);"/><br/>';
 			//out.print(); recup du bean et affichage des datas
-			// faire une fct qu'on appel à chaque fois que le btn est appuyer (js)
-			corps.innerHTML +="<br/>";
-			corps.innerHTML +="<br/>";
-			corps.innerHTML +="<br/>";
-			corps.innerHTML +="Date : 01/09/2016";
-			corps.innerHTML +="<br/>";
-			corps.innerHTML +="<br/>";
-			corps.innerHTML +="lieu : hgiuhgiuheihgb<br/><br/>Précipitation : 52 ml/cm²<br/>....";
-			
 			
 			
 		

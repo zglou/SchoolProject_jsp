@@ -9,7 +9,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Météo du jour bonjour</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><title>Météo du jour bonjour</title>
 </head>
 <body>
 
@@ -23,6 +23,7 @@
 	%>
 		
 		<p>
+			<input type="button" value="Accueil" name="Modification" onclick="openPage('index.jsp')"/>
 			<input type="button" value="Consultation par jour" name="consult" onclick="openPage('consultationJour.jsp')"/>
 			<input type="button" value="Consultation d'un mois" name="consultationMois" onclick="openPage('consultationMois.jsp')"/>
 			<input type="button" value="Ajout d'une donnée" name="ajoutUnJour" onclick="openPage('ajoutData.jsp')"/>

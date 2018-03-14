@@ -8,86 +8,31 @@
 
     corps.innerHTML = '<p/><form  method="post">'+
 	'<br/>'+
-	'<p/>	Date : <input name="dateMeteo" type="date" />'+
+	'<p/>	Date : <input id="dateMeteo" type="date" />'+
 	'<br/>'+
-	'<p/>	Lieu : <input name="lieuMeteo" type="text" />'+
+	'<p/>	Lieu : <input id="lieuMeteo" type="text" />'+
 	'<br/>'+
-	'<p/>	Précipitation ( ml/cm² ) : <input name="precipitationMeteo" type="number" />'+
+	'<p/>	Précipitation ( ml/cm² ) : <input id="precipitationMeteo" type="number" step="0.01" />'+
 	'<br/>'+
 	'<p/>	Type de précipitation : '+
-	'<select name ="typePrécipitationMeteo">'+
+	'<select id ="typePrécipitationMeteo">'+
   		'<option value="pluie">Pluie</option>'+
   		'<option value="neige">Neige</option>'+
   		'<option value="grele">Grèle</option>'+
 	'</select>'+
 	'<br/>'+
-	'<p/>	Température : <input name="temperatureMeteo" type="number" step="0.01"/>'+
+	'<p/>	Température : <input id="temperatureMeteo" type="number" step="0.01"/>'+
 	'<br/>'+
-	'<p/>	Ensoleillement ( % ) : <input name="ensoleilementMeteo" type="number" step="0.01"/>'+
+	'<p/>	Ensoleillement ( % ) : <input id="ensoleilementMeteo" type="number" step="0.01"/>'+
 	'<br/>'+
-	'<p/>	Direction du vent : <input name="directionVentMeteo" type="text" />'+
+	'<p/>	Direction du vent : <input id="directionVentMeteo" type="text" />'+
 	'<br/>'+
-	'<p/>	Vitesse du vent ( km/h ) : <input name="VitesseVentMeteo" type="number" step="0.01"/>'+
+	'<p/>	Vitesse du vent ( km/h ) : <input id="VitesseVentMeteo" type="number" step="0.01"/>'+
 	'<br/>'+
-	'<p/>	Ajouter une photo : <input name="ajoutPhoto" type="file" accept=".png, .jpg, .jpeg" multiple>'+
+	'<p/>	Ajouter une photo : <input id="ajoutPhoto" type="file" accept=".png, .jpg, .jpeg" multiple>'+
 	'<br/>'+
 	'<br/>'+
-	'<button type="submit" name="valider" onclick=";">Valider</button> '+
+	'<button type="submit" name="valider" onclick="ajouterDonnee(document.getElementById(\'dateMeteo\').value,document.getElementById(\'lieuMeteo\').value,document.getElementById(\'precipitationMeteo\').value,document.getElementById(\'typePrécipitationMeteo\').value,document.getElementById(\'temperatureMeteo\').value,document.getElementById(\'ensoleilementMeteo\').value,document.getElementById(\'directionVentMeteo\').value,document.getElementById(\'VitesseVentMeteo\').value,document.getElementById(\'ajoutPhoto\').value);">Valider</button> '+
 '</form>';
 </script >
-<%
-	String x = request.getParameter("valider");
-	%>
-	<br>
-	 <%
-	 if(x!=null )
-	{
-		boolean send = true;
-		String dateM = request.getParameter("dateMeteo");
-		String lieuM = request.getParameter("lieuMeteo");
-		String precipitationM = request.getParameter("precipitationMeteo");
-		String typePrecipitationM = request.getParameter("typePrécipitationMeteo");
-		String temperatureM = request.getParameter("temperatureMeteo");
-		String ensoleilementM = request.getParameter("ensoleilementMeteo");
-		String dirVentM = request.getParameter("directionVentMeteo");
-		String vitVentM = request.getParameter("VitesseVentMeteo");
-		String ajoutPhotoM = request.getParameter("ajoutPhoto");
-	
-	    //try something
-		
-	 
-	    out.println(dateM);
-	    out.print("<br>");  
-	    if(lieuM.matches("^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$")){
-		  
-			out.println(lieuM);
-			out.print("<br>");
-	    }else{
-			send = false;
-	    }
-	    out.print(precipitationM);
-	    out.print("<br>");  
-	    out.print(typePrecipitationM);
-	    out.print("<br>");  
-	    out.print(temperatureM);
-	    out.print("<br>");  
-	    out.print(ensoleilementM);
-	    out.print("<br>");  
-	    if(dirVentM.matches("^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$")){
-		  
-			out.println(dirVentM);
-			out.print("<br>");
-	  	}else{
-		 	send=false;
-	  	}
-	  	out.print("<br>");  
-	  	out.print(vitVentM);
-	 	out.print("<br>");  
-	  	out.print(ajoutPhotoM);
-	
-	  	out.print("<br>");  
-	 
-	  
-	}
-	 
-	%>
+

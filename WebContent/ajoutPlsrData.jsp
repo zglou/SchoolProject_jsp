@@ -8,7 +8,7 @@
 
 	corps.innerHTML+='<p>Fichier que vous voulez importer : ';
 	corps.innerHTML+= '<br/>';
-    corps.innerHTML+='<input name="fichierData" type="file" accept=".txt" multiple><br/>';
-    corps.innerHTML+='<input name="validation" type="button" value="Valider" onclick=";"><br/>';
+    corps.innerHTML+='<input id="fichierData" type="file" accept=".txt" multiple><br/>';
+    corps.innerHTML+='<input name="validation" type="button" value="Valider" onclick="importDataMultiple(document.getElementById(\'fichierData\').value);"><br/>';
 
 </script>
