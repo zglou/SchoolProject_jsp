@@ -1,4 +1,3 @@
-<%@page import="server.GestionClient"%>
 <%@page import="bean.Meteo"%>
 <%@page import="java.util.Base64"%>
 <%@page import="bean.Photo"%>
@@ -10,6 +9,7 @@
 
 <jsp:include page="header.jsp" />
 
+<link rel="stylesheet" href="style.css" />
 
 <body>
 
@@ -35,20 +35,22 @@
 
 	</form>
 	
-		<%
-	
+	</br>
+
+	<%
 		GestionMeteo gestion = new GestionMeteo();
-	
+
 		if (request.getParameter("submit") != null) {
-			
+
 			v.setDateRecup(request.getParameter("annee"));
 			v.setLieu(request.getParameter("lieu"));
-			
+
 			switch (v.validation()) {
-				case 1 :
-					if (gestion.initCo()) {
-						ArrayList<Meteo> tabMeteo = gestion.getMeteoByDay(v.date.getYear(), v.date.getMonthValue(), v.date.getDayOfMonth(), v.getLieu());
-						if (!tabMeteo.isEmpty()) {
+			case 1:
+				if (gestion.initCo()) {
+					ArrayList<Meteo> tabMeteo = gestion.getMeteoByDay(v.date.getYear(), v.date.getMonthValue(),
+							v.date.getDayOfMonth(), v.getLieu());
+					if (!tabMeteo.isEmpty()) {
 	%>
 	<table>
 
@@ -75,19 +77,18 @@
 			<td><%=cell.getDonnees().getTypePrecipitation()%></td>
 			<td><%=cell.getDonnees().getVent().getDirection()%></td>
 			<td><%=cell.getDonnees().getVent().getVitesse()%></td>
-			
-			<%
 
-			if(!cell.getDonnees().photos.isEmpty()){
-				for(Photo photo : cell.getDonnees().photos){
-					%>
-					<td><img style="width: 200px;" src="data:image/jpeg;base64,<%=Base64.getEncoder().encodeToString(photo.getImg())%>" /></td>
-					<%
-				}
-			}
-			
+			<%
+				if (!cell.getDonnees().photos.isEmpty()) {
+										for (Photo photo : cell.getDonnees().photos) {
 			%>
-			
+			<td><img style="width: 200px;"
+				src="data:image/jpeg;base64,<%=Base64.getEncoder().encodeToString(photo.getImg())%>" /></td>
+			<%
+				}
+									}
+			%>
+
 		</tr>
 		<%
 			}
@@ -95,26 +96,26 @@
 
 	</table>
 	<%
-		}else{
-			%><p>Aucune donnée trouvée</p>
+		} else {
+	%><p>Aucune donnée trouvée</p>
 	<%
 		}
-					} else {
+				} else {
 	%>
 	<p>Impossible de se connecter à la base de donnée</p>
 	<%
 		}
-					break;
-				case -1:
-					%>
+				break;
+			case -1:
+	%>
 	<p>Date non valide</p>
 	<%
-					break;
-				case -2:
-					%>
+		break;
+			case -2:
+	%>
 	<p>Lieu non valide</p>
 	<%
-					break;
+		break;
 			}
 		}
 	%>

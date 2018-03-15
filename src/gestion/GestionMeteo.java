@@ -102,5 +102,15 @@ public class GestionMeteo {
 		
 		return null;
 	}
+	
+	public boolean Authentification(String log, String pass) {
+		try {
+			return manager.gestion.authentification(log, pass);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 
 }

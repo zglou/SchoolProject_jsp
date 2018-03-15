@@ -29,7 +29,7 @@
 	'<br/>'+
 	'<p/>	Vitesse du vent ( km/h ) : <input id="VitesseVentMeteo" type="number" step="0.01"/>'+
 	'<br/>'+
-	'<p/>	Ajouter une photo : <input id="ajoutPhoto" type="file" accept=".png, .jpg, .jpeg" multiple>'+
+	'<p/>	Ajouter une photo : <input id="ajoutPhoto" type="file" accept=".jpg" multiple>'+
 	'<br/>'+
 	'<br/>'+
 	'<button type="submit" name="valider" onclick="ajouterDonnee(document.getElementById(\'dateMeteo\').value,document.getElementById(\'lieuMeteo\').value,document.getElementById(\'precipitationMeteo\').value,document.getElementById(\'typePrécipitationMeteo\').value,document.getElementById(\'temperatureMeteo\').value,document.getElementById(\'ensoleilementMeteo\').value,document.getElementById(\'directionVentMeteo\').value,document.getElementById(\'VitesseVentMeteo\').value,document.getElementById(\'ajoutPhoto\').value);">Valider</button> '+
